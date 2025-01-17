@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Database</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- TITLE -->
+        <header class="header">
+            <h1>Superhero Database</h1>
+        </header>
+
+        <!-- NAV -->
+        <div class="controls">
+            <input type="text" class="search-input" placeholder="Search heroes..." id="search">
+            <select class="page-size-select" id="pageSize">
+                <option value="10">10 per page</option>
+                <option value="20" selected>20 per page</option>
+                <option value="50">50 per page</option>
+                <option value="100">100 per page</option>
+                <option value="all">All results</option>
+            </select>
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Icon</th>
+                        <th data-sort="name">Name</th>
+                        <th data-sort="biography.fullName">Full Name</th>
+                        <th>Power Stats</th>
+                        <th data-sort="appearance.race">Race</th>
+                        <th data-sort="appearance.gender">Gender</th>
+                        <th data-sort="appearance.height">Height</th>
+                        <th data-sort="appearance.weight">Weight</th>
+                        <th data-sort="biography.placeOfBirth">Place of Birth</th>
+                        <th data-sort="biography.alignment">Alignment</th>
+                    </tr>
+                </thead>
+                <tbody id="heroBody"></tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="heroModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+<script src="scripts.js"></script></body>
+
+</html>
